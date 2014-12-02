@@ -1,0 +1,22 @@
+{
+  "name": "TinkerProto",
+  "version": "0.0.1",
+  "description": "Tinker. By hobbyists, for hobbyists.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BPkazemi/TinkerProto.git"
+  },
+  "author": "Babak Pourkazemi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BPkazemi/TinkerProto/issues"
+  },
+  "homepage": "https://github.com/BPkazemi/TinkerProto",
+  "dependencies": {
+    "express": "^4.10.4"
+  }
+}
