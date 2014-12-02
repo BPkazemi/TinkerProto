@@ -1,6 +1,5 @@
 var express = require('express');
 var app = express();
-var htmlDir = './public/';
 
 /****** Routing ******/
 app.all('*', function(req, res, next) {
@@ -10,31 +9,39 @@ app.all('*', function(req, res, next) {
 });
 
 app.get('/', function(req, res) {
-    res.sendFile('index.html', {root: htmlDir});
+    res.render('index.html');
 });
 app.get('/projects', function(req, res) {
-    res.sendFile('projects.html', {root: htmlDir});
+    res.render('projects.html');
 });
 app.get('/users/:id', function(req, res, next) {
     console.log('\t| ID:', req.params.id);
     next();
 }, function(req, res) {
-    res.sendFile('user.html', {root: htmlDir});
+    res.render('user.html');
+});
+app.get('/users/:id/projects', function(req, res, next) {
+    console.log('\t| ID:', req.params.id);
+    next();
+}, function(req, res) {
+    res.render('usersProjects.html');
 });
 app.get('/users/:id/config', function(req, res, next) {
     console.log('\t| ID:', req.params.id);
     next();
 }, function(req, res) {
-    res.sendFile('config.html', {root: htmlDir});
+    res.render('config.html');
 });
 app.get('/users/:id/comments', function(req, res, next) {
     console.log('\t| ID:', req.params.id);
     next();
 }, function(req, res) {
-    res.sendFile('comments.html', {root: htmlDir});
+    res.render('comments.html');
 });
 
 /****** Settings  ******/
+app.set('views', './views');
+app.engine('html', require('ejs').renderFile);
 
 /****** Middleware ******/
 app.use(express.static('public'));
