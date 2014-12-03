@@ -1,0 +1,63 @@
+html {
+    height: 100%;
+}
+body {
+    background-color: #e0e0e0;
+    height: 100%;
+}
+
+.block-area {
+    background-color: #fff;
+    height: 100%;
+}
+
+.block {
+    background-color: #f5f5f5;
+    padding: 20px;
+}
+
+.inline {
+    display: inline;
+}
+
+.row-padding-lg {
+    height: 40px;
+}
+.row-padding-md {
+    height: 35px;
+}
+.row-padding-sm {
+    height: 7px;
+}
+
+.navbar {
+    padding: 30px;
+    height: 100px;
+    background-color: #03a9f4;
+    color: #fff;
+    text-align: center;
+}
+.nav-icon {
+    width: 30px;
+}
+
+.heading {
+    font-size: 26px;
+    color: #616161;
+    font-weight: 200;
+    padding: 30px;
+}
+
+.col-header {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.profile-pic {
+    width: 100px;
+    height: 100px;
+}
+
+.pad-top {
+    padding-top: 40px;
+}
