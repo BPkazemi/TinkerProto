@@ -39,6 +39,18 @@ body {
 }
 .nav-icon {
     width: 30px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+.logo {
+    margin-right: -10px;
+}
+
+.input-style {
+    border: none;
+    border-radius: 1px;
+    line-height: 1.28em;
+    padding: 5px 8px;
 }
 
 .heading {
