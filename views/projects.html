@@ -33,27 +33,18 @@
             </div>
             <div class="col-md-2">
                 <form action="">
-                    <input class="datepicker input-style" type="text" placeholder="Filter By Date">
+                    <input class="datepicker input-style" type="text" placeholder="Filter Date">
                 </form>
             </div>
             <div class="col-md-2">
                 <form action="">
-                    <input type="text" class="input-style" placeholder="Filter By Location">
+                    <input type="text" class="input-style" placeholder="Filter Location">
                 </form>
             </div>
-            <div class="col-md-3">
-                <div class="btn-group">
-                    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false" id="dropdownMenu1">
-                        Skill
-                        <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Architecture</a></li>
-                        <li><a href="#">Computer Science</a></li>
-                        <li><a href="#">Carpenting</a></li>
-                        <li><a href="#">Electrical Engineering</a></li>
-                    </ul>
-                </div>
+            <div class="col-md-2">
+                <form action="">
+                    <input type="text" class="input-style" placeholder="Filter Skill">
+                </form>
             </div>
         </div>
         <div class="row-padding-md"></div>
@@ -77,26 +68,30 @@
                 Difficulty 
             </div>
         </div>
-        <div class="row-padding-sm"></div>
-        <div class="row block">
-            <div class="col-md-2">
-                <img class="profile-pic" src="img/profile1.jpg">
-            </div>
-            <div class="col-md-2 pad-top">
-                Sample Project 1 
-            </div>
-            <div class="col-md-2 pad-top">
-                1/1/2014
-            </div>
-            <div class="col-md-2 pad-top">
-                Woodwork
-            </div>
-            <div class="col-md-2 pad-top">
-                Charlottesville
-            </div>
-            <div class="col-md-2 pad-top">
-                3.0
-            </div>
+        <div class="data-entries">
+            <div class="row-padding-sm"></div>
+            <% for(var i = 0; i < projectsPage.length; i++) { %>
+                <div class="row block">
+                    <div class="col-md-2">
+                        <img class="profile-pic" src="<%= projectsPage[i].profilePic  %>">
+                    </div>
+                    <div class="col-md-2 pad-top">
+                        <%= projectsPage[i].title %>
+                    </div>
+                    <div class="col-md-2 pad-top">
+                        <%= projectsPage[i].date %>
+                    </div>
+                    <div class="col-md-2 pad-top">
+                        <%= projectsPage[i].skill %>
+                    </div>
+                    <div class="col-md-2 pad-top">
+                        <%= projectsPage[i].location %>
+                    </div>
+                    <div class="col-md-2 pad-top">
+                        <%= projectsPage[i].difficulty %>
+                    </div>
+                </div>
+            <% } %>
         </div>
     </div>
 
