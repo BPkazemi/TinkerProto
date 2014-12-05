@@ -28,22 +28,12 @@
         <div class="row block">
             <div class="col-md-2">
                 <form action="">
-                    <input type="text" class="input-style" placeholder="Search">
+                    <input type="text" class="search input-style" placeholder="Search">
                 </form>
             </div>
             <div class="col-md-2">
                 <form action="">
                     <input class="datepicker input-style" type="text" placeholder="Filter Date">
-                </form>
-            </div>
-            <div class="col-md-2">
-                <form action="">
-                    <input type="text" class="input-style" placeholder="Filter Location">
-                </form>
-            </div>
-            <div class="col-md-2">
-                <form action="">
-                    <input type="text" class="input-style" placeholder="Filter Skill">
                 </form>
             </div>
         </div>
@@ -68,26 +58,26 @@
                 Difficulty 
             </div>
         </div>
+        <div class="row-padding-sm"></div>
         <div class="data-entries">
-            <div class="row-padding-sm"></div>
             <% for(var i = 0; i < projectsPage.length; i++) { %>
-                <div class="row block">
+                <div class="row block data-<%= i %>">
                     <div class="col-md-2">
                         <img class="profile-pic" src="<%= projectsPage[i].profilePic  %>">
                     </div>
-                    <div class="col-md-2 pad-top">
+                    <div class="col-md-2 pad-top project-title">
                         <%= projectsPage[i].title %>
                     </div>
-                    <div class="col-md-2 pad-top">
+                    <div class="col-md-2 pad-top project-date">
                         <%= projectsPage[i].date %>
                     </div>
-                    <div class="col-md-2 pad-top">
+                    <div class="col-md-2 pad-top project-skill">
                         <%= projectsPage[i].skill %>
                     </div>
-                    <div class="col-md-2 pad-top">
+                    <div class="col-md-2 pad-top project-location">
                         <%= projectsPage[i].location %>
                     </div>
-                    <div class="col-md-2 pad-top">
+                    <div class="col-md-2 pad-top project-difficulty">
                         <%= projectsPage[i].difficulty %>
                     </div>
                 </div>
@@ -99,6 +89,7 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/picker.js"></script>
     <script src="js/picker.date.js"></script>
+    <script src="js/lunr.min.js"></script>
     <script src="js/projects.js"></script>
 </body>
 </html>

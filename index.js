@@ -7,7 +7,7 @@ var viewData = {
         "title": "Sample Project 1", 
         "date": "1/1/2014", 
         "skill": "Woodwork", 
-        "location": "Charlottesville", 
+        "location": "Charlottesville, VA", 
         "difficulty": "3.0" 
          },
         { 
