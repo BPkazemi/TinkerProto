@@ -10,6 +10,10 @@ $(function() {
 var assignEventHandlers = function() {
    $('.datepicker').pickadate();
 
+   $('.btn-primary').click(function() {
+       window.location.href="/projects/new"
+   });
+
    $('.search').on('input', function() {
        var searchResults = index.search( $(this).val() );
        if( searchResults.length == 0 ) {

@@ -20,6 +20,10 @@ body {
     display: inline;
 }
 
+.center {
+    text-align: center;
+}
+
 .row-padding-lg {
     height: 40px;
 }

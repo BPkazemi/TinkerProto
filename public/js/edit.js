@@ -13,13 +13,12 @@ $(function() {
         };
 
         $.ajax({
-            url: "../../users/1/edit",
+            url: "/users/1/edit",
             contentType: "application/json",
             type: "POST",
             data: JSON.stringify(body),
             success: function(data, status, xhr) {
                 if( data == "Created" ) {
-                    console.log("Success:", data);
                     window.location.href=xhr.getResponseHeader('Location');
                 }
             }

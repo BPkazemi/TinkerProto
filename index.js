@@ -71,6 +71,9 @@ app.get('/', function(req, res) {
 app.get('/projects', function(req, res) {
     res.render( 'projects.html', viewData );
 });
+app.get('/projects/new', function(req, res) {
+    res.render( 'newProject.html' );
+});
 app.get('/users/:id', function(req, res, next) {
     console.log('\t| ID:', req.params.id);
     next();
@@ -82,12 +85,6 @@ app.get('/users/:id/edit', function(req, res, next) {
     next();
 }, function(req, res) {
     res.render('edit.html', viewData );  
-});
-app.get('/users/:id/projects', function(req, res, next) {
-    console.log('\t| ID:', req.params.id);
-    next();
-}, function(req, res) {
-    res.render('usersProjects.html');
 });
 app.get('/users/:id/config', function(req, res, next) {
     console.log('\t| ID:', req.params.id);
@@ -112,8 +109,24 @@ app.post('/users/:id/edit', function(req, res, next) {
     viewData.userPage[0].skills = req.body.skills.split('\n');
     viewData.userPage[0].contact = req.body.contact.split('\n');
 
-    res.setHeader('Location', '../../users/1');
-    res.sendStatus(201);  // update location header to include link to newly created content
+    res.setHeader('Location', '/users/1'); 
+    res.sendStatus(201); 
+});
+app.post('/projects/new', function(req, res) {
+    console.log('\t| POST body:', req.body);
+
+    var newProject = {
+        profilePic: "img/profile4.jpg", 
+        title: req.body.title,
+        date: req.body.date,
+        skill: req.body.skill,
+        location: req.body.location,
+        difficulty: req.body.difficulty
+    };
+    viewData.projectsPage.push( newProject );
+
+    res.setHeader('Location', '/projects');
+    res.sendStatus(201); 
 });
 
 /****** Settings  ******/
