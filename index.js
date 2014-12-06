@@ -86,18 +86,6 @@ app.get('/users/:id/edit', function(req, res, next) {
 }, function(req, res) {
     res.render('edit.html', viewData );  
 });
-app.get('/users/:id/config', function(req, res, next) {
-    console.log('\t| ID:', req.params.id);
-    next();
-}, function(req, res) {
-    res.render('config.html');
-});
-app.get('/users/:id/comments', function(req, res, next) {
-    console.log('\t| ID:', req.params.id);
-    next();
-}, function(req, res) {
-    res.render('comments.html');
-});
 
 /** POST **/
 app.post('/users/:id/edit', function(req, res, next) {
