@@ -45,6 +45,10 @@ body {
 .logo {
     margin-right: -10px;
 }
+a.projects-link {
+    color: #fff;
+    text-decoration: none; !important
+}
 
 .input-style {
     border: none;

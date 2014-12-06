@@ -2,13 +2,18 @@ var entries = [],
     numEntries,
     index;
 
+$(function() {
+    setupSearch();
+    assignEventHandlers();
+});
+
 var assignEventHandlers = function() {
    $('.datepicker').pickadate();
 
    $('.search').on('input', function() {
        var searchResults = index.search( $(this).val() );
        if( searchResults.length == 0 ) {
-           // show everything
+           // Show everything
            for( var i = 0; i < numEntries; i++ ) {
                entries[i].show();
            }
@@ -61,7 +66,3 @@ var setupSearch = function() {
    }
 }
 
-$(function() {
-    setupSearch();
-    assignEventHandlers();
-});

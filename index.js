@@ -1,5 +1,7 @@
 var express = require('express');
 var app = express();
+var bodyParser = require('body-parser');
+
 var viewData = {
     "projectsPage": [
         { 
@@ -26,8 +28,34 @@ var viewData = {
         "location": "Pebble Beach, CA", 
         "difficulty": "5.0" 
          }
+    ],
+    "userPage": [
+        {
+        "name": "Bob The Builder",
+        "profilePic": "img/profile1.jpg",
+        "summary": "Bob has over a decade of industry experience building challenging, complex projects. Started as a construction worker for 2 years before moving up into project management.",
+        "skills": [
+            "Power tools - drilling, sawing", 
+            "Blueprint design and analysis",
+            "Project management",
+            "AutoCAD"
+        ],
+        "contact": [
+            "bobthebuilder@gmail.com",
+            "123-456-7890"
+        ]
+        }
     ]
 };
+
+/****** Middleware ******/
+app.use(express.static('public'));
+
+app.use(function(err, req, res, next) {
+    console.error( err.stack );
+    res.status(500).send("Something broke!");
+});
+app.use(bodyParser.json());
 
 /****** Routing ******/
 app.all('*', function(req, res, next) {
@@ -36,6 +64,7 @@ app.all('*', function(req, res, next) {
     next();
 });
 
+/** GET **/
 app.get('/', function(req, res) {
     res.render('index.html' );
 });
@@ -46,7 +75,13 @@ app.get('/users/:id', function(req, res, next) {
     console.log('\t| ID:', req.params.id);
     next();
 }, function(req, res) {
-    res.render('user.html');
+    res.render('user.html', viewData );
+});
+app.get('/users/:id/edit', function(req, res, next) {
+    console.log('\t| ID:', req.params.id);
+    next();
+}, function(req, res) {
+    res.render('edit.html', viewData );  
 });
 app.get('/users/:id/projects', function(req, res, next) {
     console.log('\t| ID:', req.params.id);
@@ -67,17 +102,23 @@ app.get('/users/:id/comments', function(req, res, next) {
     res.render('comments.html');
 });
 
+/** POST **/
+app.post('/users/:id/edit', function(req, res, next) {
+    console.log('\t| ID:', req.params.id);
+    next();
+}, function(req, res) {
+    console.log('\t| POST body:', req.body);
+    viewData.userPage[0].summary = req.body.summary;
+    viewData.userPage[0].skills = req.body.skills.split('\n');
+    viewData.userPage[0].contact = req.body.contact.split('\n');
+
+    res.setHeader('Location', '../../users/1');
+    res.sendStatus(201);  // update location header to include link to newly created content
+});
+
 /****** Settings  ******/
 app.set('views', './views');
 app.engine('html', require('ejs').renderFile);
-
-/****** Middleware ******/
-app.use(express.static('public'));
-
-app.use(function(err, req, res, next) {
-    console.error( err.stack );
-    res.status(500).send("Something broke!");
-});
 
 /****** Server ******/
 var server = app.listen(3000, function() {

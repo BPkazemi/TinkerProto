@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tinker</title>
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/base.css">
+    <link rel="stylesheet" href="../../css/edit.css">
+</head>
+<body>
+    <nav class="navbar navbar-static-top" role="navigation">
+        <img src="../../img/logo.png" class="logo">
+        <h1 class="inline" style="font-weight:400;"> <a class="projects-link" href="../projects">Tinker</a></h1>
+        <a href="./users/1/config">
+            <img class="nav-icon navbar-right" src="../../img/settings.png">
+        </a>
+        <a href="/users/1">
+            <img class="nav-icon navbar-right" src="../../img/user.png">
+        </a>
+    </nav>
+    <div class="container">
+        <div class="row block">
+            <div class="col-lg-4 center">
+                <img class="profile-pic" src="../../img/profile1.jpg">
+                <button class="btn btn-default edit-button"><a class="edit-button">Change Picture</a></button>
+                <div class="row">
+                    <button class="btn btn-success save-button"><a class="save-button">Save Changes</a></button>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="row">
+                    <h1 class="name"><%= userPage[0].name %></h1>
+                </div>
+                <div class="row">
+                    <h4>Summary</h4>
+                    <textarea class="edit-field"><%= userPage[0].summary %></textarea>
+                    <h4>Skills</h4>
+                    <textarea class="edit-field"><% for(var i = 0; i < userPage[0].skills.length; i++ ) { %><%= userPage[0].skills[i] %>
+<% } %>
+                    </textarea>
+                    <h4>Contact</h4>
+                    <textarea class="edit-field"><% for(var i = 0; i < userPage[0].contact.length; i++ ) { %><%= userPage[0].contact[i] %>
+<% } %>
+                    </textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../../js/jquery-2.1.1.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/edit.js"></script>
+</body>
+</html>

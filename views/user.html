@@ -3,15 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <title>Tinker</title>
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/user.css">
 </head>
 <body>
-    <h3>Dummy user's page</h3>
-    <ul>
-        <li>Picture of the user</li>
-        <li>Their current information</li>
-        <li>An "edit" button that lets them change their info.</li>
-    </ul>
+    <nav class="navbar navbar-static-top" role="navigation">
+        <img src="../img/logo.png" class="logo">
+        <h1 class="inline" style="font-weight:400;"> <a class="projects-link" href="../projects">Tinker</a></h1>
+        <a href="./users/1/config">
+            <img class="nav-icon navbar-right" src="../img/settings.png">
+        </a>
+        <a href="/users/1">
+            <img class="nav-icon navbar-right" src="../img/user.png">
+        </a>
+    </nav>
+    <div class="container">
+        <div class="row block">
+            <div class="col-lg-4 center">
+                <img class="profile-pic" src="../img/profile1.jpg">
+                <button class="btn btn-default edit-button"><a class="edit-button" href="./1/edit">Edit</a></button>
+            </div>
+            <div class="col-lg-6">
+                <div class="row">
+                    <h1 class="name"><%= userPage[0].name %></h1>
+                </div>
+                <div class="row">
+                    <h4>Summary</h4>
+                    <p>
+                        <%= userPage[0].summary %>
+                    </p>
+                    <h4>Skills</h4>
+                    <ul>
+                        <% for(var i = 0; i < userPage[0].skills.length; i++ ) { %>
+                            <li><%= userPage[0].skills[i] %></li>
+                        <% } %>
+                    </ul>
+                    <h4>Contact</h4>
+                    <ul>
+                        <% for(var i = 0; i < userPage[0].contact.length; i++ ) { %>
+                            <li><%= userPage[0].contact[i] %></li>
+                        <% } %>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/jquery-2.1.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
 </body>
 </html>

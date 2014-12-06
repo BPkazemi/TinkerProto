@@ -1,0 +1,29 @@
+.edit-field {
+    width: 100%;
+    height: 100px;
+}
+.profile-pic {
+    width: 330px;
+    height: 330px;
+    padding-top: 25px;
+}
+
+.edit-button {
+    margin-top: 10px;
+}
+.save-button {
+    margin-top: 50px;
+    width: 300px;
+}
+
+.center {
+    text-align: center;
+}
+a.edit-button {
+    color: #666;
+    text-decoration: none; !important
+}
+a.save-button {
+    color: #444;
+    text-decoration: none; !important
+}
