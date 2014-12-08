@@ -6,7 +6,7 @@ var viewData = {
     "projectsPage": [
         { 
         "profilePic": "img/profile1.jpg", 
-        "title": "Sample Project 1", 
+        "title": "Constructing a Tree House", 
         "date": "1/1/2014", 
         "skill": "Woodwork", 
         "location": "Charlottesville, VA", 
@@ -14,7 +14,7 @@ var viewData = {
          },
         { 
         "profilePic": "img/profile2.jpg", 
-        "title": "Sample Project 2", 
+        "title": "Web Development", 
         "date": "10/27/2014", 
         "skill": "Computer Science", 
         "location": "Seattle, WA", 
@@ -22,7 +22,7 @@ var viewData = {
          },
         { 
         "profilePic": "img/profile3.jpg", 
-        "title": "Sample Project 3", 
+        "title": "Amateur Blue Prints and Design Help", 
         "date": "12/1/2014", 
         "skill": "Architecture", 
         "location": "Pebble Beach, CA", 
