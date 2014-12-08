@@ -17,12 +17,27 @@
         </a>
     </nav>
     <div class="container">
-        <div class="row">
+      
+    
+
+
+        <div class="row-padding-sm"></div>
+
+        <div class="row-block">
+            <a href="https://gardenclub.homedepot.com/" target="_blank">
+                <img src="/img/homedepot.png" width="100%"/>
+                <figcaption>Sponsored</figcaption>
+            </a>
+
+        </div>
+
+          <div class="row">
             <div class="col-md-12 heading">
                 Open Projects
             </div>
         </div>
-        <div class="row block">
+
+            <div class="row block">
             <div class="col-md-2">
                 <form action="">
                     <input type="text" class="search input-style" placeholder="Search">
@@ -37,17 +52,6 @@
             <div class="col-md-2">
                 <button class="btn btn-primary">+ New Project</button>
             </div>
-        </div>
-
-
-        <div class="row-padding-sm"></div>
-
-        <div class="row-block">
-            <a href="https://gardenclub.homedepot.com/" target="_blank">
-                <img src="/img/homedepot.png" width="100%"/>
-                <figcaption>Sponsored</figcaption>
-            </a>
-
         </div>
 
         <div class="row-padding-sm"></div>
@@ -72,7 +76,7 @@
                 Difficulty 
             </div>
         </div>
-        <div class="row-padding-sm"></div>
+        <!-- <div class="row-padding-sm"></div> -->
         <div class="data-entries">
             <% for(var i = 0; i < projectsPage.length; i++) { %>
                 <div class="row block data-<%= i %>">
